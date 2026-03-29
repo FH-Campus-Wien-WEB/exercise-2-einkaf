@@ -32,6 +32,9 @@ window.onload = function () {
         let editButton = document.createElement("button");
         editButton.textContent = "Edit";
         section_introduction.appendChild(editButton);
+        editButton.onclick = function () {
+          location.href = "edit.html?imdbID=" + movie.imdbID;
+        };
 
         // add paragraph and put the released time an runetime inside with a good format
         let info = document.createElement("p");

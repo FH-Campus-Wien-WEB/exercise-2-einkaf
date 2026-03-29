@@ -19,7 +19,7 @@ function getMovie() {
   const movie = {};
 
   const elements = Array.from(document.forms[0].elements).filter(
-    (element) => element.id,
+    (element) => element.id
   );
 
   for (const element of elements) {
@@ -90,10 +90,17 @@ xhr.onload = function () {
       "Loading of movie data failed. Status was " +
         xhr.status +
         " - " +
-        xhr.statusText,
+        xhr.statusText
     );
   }
 };
 
-xhr.send();
+// navigates back to the overview page; Run this code AFTER everything is loaded (HTML, images, etc.)
+window.onload = function () {
+  const cancelButton = document.getElementById("cancelButton");
+  cancelButton.onclick = function () {
+    location.href = "index.html";
+  };
+};
 
+xhr.send();

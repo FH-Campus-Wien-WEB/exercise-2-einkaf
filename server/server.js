@@ -24,9 +24,17 @@ app.get("/movies/:imdbID", function (req, res) {
     functionality here */
   const imdbID = req.params.imdbID;
   const movie = movieModel[imdbID];
+  // I check here if movie is truthy
   if (movie) {
     res.send(movie);
   } else {
+    // falsy values:
+    //     false
+    // 0
+    // ""  empty string
+    // null
+    // undefined
+    // NaN
     res.sendStatus(404);
   }
 });
