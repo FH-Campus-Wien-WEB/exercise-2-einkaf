@@ -31,6 +31,7 @@ window.onload = function () {
         // edit button
         let editButton = document.createElement("button");
         editButton.textContent = "Edit";
+        editButton.classList.add("btnEdit", "btn");
         section_introduction.appendChild(editButton);
         editButton.onclick = function () {
           location.href = "edit.html?imdbID=" + movie.imdbID;
@@ -40,8 +41,15 @@ window.onload = function () {
         let info = document.createElement("p");
         let hours = Math.floor(movie.Runtime / 60);
         let minutes = movie.Runtime % 60;
-        info.innerHTML = `<time>${hours} h ${minutes}m</time> • 
-                                Released on <time datetime="${movie.Released}">${movie.Released}</time>`;
+        const date = new Date(movie.Released);
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const year = date.getFullYear();
+        const formattedDate = `${day}/${month}/${year}`;
+        info.innerHTML = `
+        <time>${hours} h ${minutes}m</time> • 
+        Released on <time datetime="${movie.Released}">${formattedDate}</time>
+      `;
         section_introduction.appendChild(info);
 
         // add paragraph and put the rating inside with a good format
@@ -57,6 +65,7 @@ window.onload = function () {
         movie.Genres.forEach((element) => {
           let genre = document.createElement("span");
           genre.textContent = element;
+          genre.classList.add("btn");
           genres.appendChild(genre);
         });
         section_introduction.appendChild(genres);

@@ -1,5 +1,6 @@
 body {
   font-family: "Trebuchet MS", sans-serif;
+  background-color: seashell;
 }
 
 button {
@@ -8,4 +9,20 @@ button {
     border-width: 1px;
     border-radius: 4px;
     font-size: 110%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: rgb(245,197,24);
+  color: black;
+  border-radius: 3px;
+  padding: 5px 10px;
+  border: none;
+  box-shadow: 5px 5px 10px 1px rgba(255, 255, 255, 0.242);
+  transition: all 0.12s ease;
+}
+
+.btn:hover {
+  background-color: rgb(196, 161, 35);
+  transform: scale(1.05);
 }

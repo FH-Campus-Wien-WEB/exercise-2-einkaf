@@ -2,7 +2,8 @@ const movies = {
   tt0816692: {
     imdbID: "tt0816692",
     Title: "Interstellar",
-    Released: "07/11/2014",
+    Released: "2014-11-07",
+    // Released: "07/11/2014",
     Runtime: 169,
     Genres: ["Adventure", "Drama", "Sci-Fi"],
     Directors: ["Christopher Nolan"],
@@ -18,7 +19,7 @@ const movies = {
   tt0469494: {
     imdbID: "tt0469494",
     Title: "There Will Be Blood",
-    Released: "25/01/2008",
+    Released: "2008-01-25",
     Runtime: 158,
     Genres: ["Drama"],
     Directors: ["Paul Thomas Anderson"],
@@ -34,7 +35,7 @@ const movies = {
   tt2582802: {
     imdbID: "tt2582802",
     Title: "Whiplash",
-    Released: "15/10/2014",
+    Released: "2014-10-15",
     Runtime: 106,
     Genres: ["Drama", "Music"],
     Directors: ["Damien Chazelle"],

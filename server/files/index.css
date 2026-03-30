@@ -1,41 +1,119 @@
 @import url(base.css);
 
-h1 {
-  font-size: 200%;
-  margin: 8px 0px;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-img {
-  border-radius: 12px;
+h1 {
+  font-size: 200%;
+  margin: 8px 0;
+}
+
+h2 {
+  font-weight: bold;
+  margin: 10px 5px;
 }
 
 article {
-  background-color: lightgray;
-  border-radius: 16px;
-  padding: 16px;
-  margin: 2vw;
+  background-color: black;
+  color: white;
+  margin: 30px 20px;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 300px;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
 }
 
-span {
-  margin-right: 4px;
+article:hover {
+  background: rgb(62, 62, 62);
+  color: white;
+}
+
+article:hover img{
+  transform: scale(1.02);
+}
+
+img {
+  border-radius: 10px;
+  margin: 20px auto 30px;
+  max-width: 260px;
+  box-shadow: 10px 10px 20px 0 rgba(153, 153, 153, 0.353);
+  transition: all 0.2s ease;
+}
+
+span.btn {
+  background-color: rgb(196, 161, 35);
+  margin-right: 5px;
+  box-shadow: 5px 5px 10px 1px rgba(255, 255, 255, 0.092);
+}
+span.btn:hover {
+  cursor: default;
+  transform: scale(1);
 }
 
 .genre {
   padding: 4px 8px;
-  border: solid black 1px;
+  border: 1px solid rgb(11, 11, 11);
   border-radius: 6px;
   background-color: darkgray;
   font-weight: bold;
 }
 
-input {
-  width: 100%;
+.genres {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 5px;
 }
 
-select {
-  width: 100%;
+.description {
+  text-align: justify;
 }
 
-textarea {
-  width: 100%;
+.introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.btnEdit {
+  font-weight: bold;
+}
+
+@media (min-width: 1080px) {
+  body {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+}
+
+article:hover .btnEdit {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  75% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

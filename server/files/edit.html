@@ -9,7 +9,7 @@
     <script src="edit.js"></script>
   </head>
   <body>
-    <article>
+    <article class="form">
       <!-- add a form and show information for edditing -->
       <form>
         <input type="hidden" id="imdbID" />
@@ -93,8 +93,12 @@
           <input required id="Actors" type="text" />
         </div>
 
-        <button type="button" onclick="putMovie()">Save</button>
-        <button type="button" onclick="cancelButton()">Cancel</button>
+        <div class="footer">
+          <button class="btn" type="button" onclick="putMovie()">SAVE</button>
+          <button class="btn" type="button" onclick="cancelButton()">
+            CANCLE
+          </button>
+        </div>
       </form>
     </article>
   </body>
