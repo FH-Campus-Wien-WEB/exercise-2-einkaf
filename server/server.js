@@ -52,9 +52,13 @@ app.put("/movies/:imdbID", function (req, res) {
   // check if movie exist
   if (movieModel[imdbID]) {
     movieModel[imdbID] = updatedMovie;
+    // send satatus code as a respond
+    res.sendStatus(200);
+  } else {
+    movieModel[imdbID] = updatedMovie;
+    // send satatus code as a respond
+    res.sendStatus(201);
   }
-  // send satatus code as a respond
-  res.sendStatus(200);
 });
 
 app.listen(3000);
