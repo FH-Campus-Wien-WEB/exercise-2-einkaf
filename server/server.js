@@ -22,6 +22,7 @@ app.get("/movies", function (req, res) {
 app.get("/movies/:imdbID", function (req, res) {
   /* Task 2.1. Remove the line below and add the 
     functionality here */
+  // get the id from the path /movies/:imdbID
   const imdbID = req.params.imdbID;
   const movie = movieModel[imdbID];
   // I check here if movie is truthy
@@ -43,6 +44,18 @@ app.get("/movies/:imdbID", function (req, res) {
    - Add a new PUT endpoint
    - Check whether the movie sent by the client already exists 
      and continue as described in the assignment */
+app.put("/movies/:imdbID", function (req, res) {
+  // get the id from the path /movies/:imdbID
+  const imdbID = req.params.imdbID;
+  // save updated data
+  const updatedMovie = req.body;
+  // check if movie exist
+  if (movieModel[imdbID]) {
+    movieModel[imdbID] = updatedMovie;
+  }
+  // send satatus code as a respond
+  res.sendStatus(200);
+});
 
 app.listen(3000);
 
