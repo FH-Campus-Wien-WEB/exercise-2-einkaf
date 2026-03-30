@@ -66,15 +66,26 @@ function putMovie() {
     - Configure the function below as the onload event handler
     - Send the movie data as JSON
   */
-
+  //  Create a new XMLHttpRequest object (this is how we send HTTP requests)
   const xhr = new XMLHttpRequest();
+  //  Get all movie data from the form (object with all fields)
+  const movieInput = getMovie();
+  //  Configure the request:
+  // - Method: PUT (update/create)
+  // - URL: /movies/:imdbID (example: /movies/tt1234567)
+  xhr.open("PUT", "/movies/" + movieInput.imdbID);
+  // Tell the server we are sending JSON data
+  xhr.setRequestHeader("Content-Type", "application/json");
+  // This function runs AFTER the server responds
   xhr.onload = function () {
-    if (xhr.status == 200 || xhr.status === 204) {
+    if (xhr.status == 200 || xhr.status === 201) {
       location.href = "index.html";
     } else {
       alert("Saving of movie data failed. Status code was " + xhr.status);
     }
   };
+  // Send the movie data to the server as JSON string
+  xhr.send(JSON.stringify(movieInput));
 }
 
 /** Loading and setting the movie data for the movie with the passed imdbID */
@@ -95,12 +106,9 @@ xhr.onload = function () {
   }
 };
 
-// navigates back to the overview page; Run this code AFTER everything is loaded (HTML, images, etc.)
-window.onload = function () {
-  const cancelButton = document.getElementById("cancelButton");
-  cancelButton.onclick = function () {
-    location.href = "index.html";
-  };
-};
+// navigates back to the overview page;
+function cancelButton() {
+  location.href = "index.html";
+}
 
 xhr.send();
