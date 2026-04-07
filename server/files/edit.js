@@ -66,6 +66,13 @@ function putMovie() {
     - Configure the function below as the onload event handler
     - Send the movie data as JSON
   */
+  //  Get the form; Validate the form
+  const form = document.forms[0];
+
+  if (!form.reportValidity()) {
+    // Stop if invalid
+    return;
+  }
   //  Create a new XMLHttpRequest object (this is how we send HTTP requests)
   const xhr = new XMLHttpRequest();
   //  Get all movie data from the form (object with all fields)

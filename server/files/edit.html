@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Movie</title>
     <link rel="stylesheet" href="edit.css" />
+    <link rel="icon" type="image/png" href="icons/Bold _EDIT_ logo design.png" />
     <script src="edit.js"></script>
   </head>
   <body>
@@ -30,7 +31,7 @@
 
         <div>
           <label for="Plot">Plot</label>
-          <textarea required id="Plot" rows="5"></textarea>
+          <textarea spellcheck="true" required id="Plot" rows="5"></textarea>
         </div>
 
         <div>
@@ -40,12 +41,12 @@
 
         <div>
           <label for="Metascore">Metascore</label>
-          <input required id="Metascore" type="number" />
+          <input min="0" max="100" required id="Metascore" type="number" />
         </div>
 
         <div>
           <label for="imdbRating">IMDB Rating</label>
-          <input required id="imdbRating" type="number" />
+          <input min="0" max="10" required id="imdbRating" type="number" step="0.1"/>
         </div>
 
         <div>
